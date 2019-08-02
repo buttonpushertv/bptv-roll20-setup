@@ -1,0 +1,198 @@
+{
+    "schema_version": 2,
+    "oldId": "-LkFIMLFJqaqMCvTUdWq",
+    "name": "GMMacroSheet",
+    "avatar": "",
+    "bio": "",
+    "gmnotes": "%3Cp%3EBar%201%20-%20AC%3C/p%3E%3Cp%3EBar%202%20-%20Passive%20Percept%3C/p%3E%3Cp%3EBar%203%20-%20HP%3C/p%3E",
+    "defaulttoken": "",
+    "tags": "[]",
+    "controlledby": "",
+    "inplayerjournals": "",
+    "attribs": [
+        {
+            "name": "l1mancer_status",
+            "current": " ",
+            "max": "",
+            "id": "-LkFIMLtT3Ed636lRZzq"
+        },
+        {
+            "name": "rtype",
+            "current": "@{advantagetoggle}",
+            "max": "",
+            "id": "-LkFIMLw2ndF5mlzrMPz"
+        },
+        {
+            "name": "dndstyling",
+            "current": "on",
+            "max": "",
+            "id": "-LkFIMLx7CsqHrVfDASV"
+        },
+        {
+            "name": "version",
+            "current": "2.7",
+            "max": "",
+            "id": "-LkFIR1NguGPZ_E6fboC"
+        },
+        {
+            "name": "global_skill_mod",
+            "current": "",
+            "max": "",
+            "id": "-LkFIR22Nw2YpcGzBeNt"
+        },
+        {
+            "name": "global_save_mod",
+            "current": "",
+            "max": "",
+            "id": "-LkFIR25jmM3CbpCvxQx"
+        },
+        {
+            "name": "global_attack_mod",
+            "current": "",
+            "max": "",
+            "id": "-LkFIR2C0PRhvYVeeaSZ"
+        },
+        {
+            "name": "global_damage_mod_roll",
+            "current": "",
+            "max": "",
+            "id": "-LkFIR2GXH8w0Q_afCDr"
+        },
+        {
+            "name": "global_damage_mod_crit",
+            "current": "",
+            "max": "",
+            "id": "-LkFIR2IxN-PQ72gPWa6"
+        },
+        {
+            "name": "global_damage_mod_type",
+            "current": "",
+            "max": "",
+            "id": "-LkFIR2KeV5mDpUwjFze"
+        },
+        {
+            "name": "armorwarningflag",
+            "current": "hide",
+            "max": "",
+            "id": "-LkFIR3LYBuGK3ACJg9o"
+        },
+        {
+            "name": "customacwarningflag",
+            "current": "hide",
+            "max": "",
+            "id": "-LkFIR3QRK7rTXL_WqDr"
+        },
+        {
+            "name": "ac",
+            "current": 10,
+            "max": "",
+            "id": "-LkFIR3VAfGa09f_gv5c"
+        },
+        {
+            "name": "mancer_confirm_flag",
+            "current": 1,
+            "max": "",
+            "id": "-LkFIR6iHQPnPgkd6Nme"
+        }
+    ],
+    "abilities": [
+        {
+            "name": "SetupPC",
+            "description": "",
+            "istokenaction": false,
+            "action": "!token-mod --set bar1_link| bar2_link| bar3_link| bar1| bar2| bar3|\n!token-mod {{\n--set bar1_link|ac\n--set bar2_link|passive_wisdom\n--set bar3_link|hp\n--set bar3_value|[[@{selected|passive_wisdom}]]\n--set name|\"@{selected|character_name}\"\n--on showname\n--on showplayers_name\n--on showplayers_bar1\n--on showplayers_bar2\n--on showplayers_aura1\n--on showplayers_aura2\n--on light_hassight\n}}",
+            "order": -1
+        },
+        {
+            "name": "SetupNPC",
+            "description": "",
+            "istokenaction": false,
+            "action": "!token-mod --set bar1_link| bar2_link| bar3_link| bar2| bar3|\n!token-mod {{\n--set bar3_value|?{Current Hit Points|0}\n--set bar3_max|?{Current Hit Points}\n--set bar1_value|@{selected|npc_ac}\n--set bar2_value|[[@{selected|passive_wisdom}]]\n--set name|\"@{selected|character_name}\"\n--on showname\n--on showplayers_name\n--off showplayers_bar1\n--off showplayers_bar2\n--off showplayers_bar3\n}}",
+            "order": -1
+        },
+        {
+            "name": "SetupMenu",
+            "description": "",
+            "istokenaction": false,
+            "action": "/w gm &{template:default} {{name=Setup Menu}} {{**Token Setup**\n[SetupPC](~GMMacroSheet|SetupPC)\n[SetupNPC](~GMMacroSheet|SetupNPC)\n[BeyondOGLImporter](!beyond --config) • [Help](!beyond --help)}}{{**Token Info Config**\n[StatusInfo](!condition config)\n[ChatSetAttr](!setattr-config)\n[TokenMod](!token-mod --config) • [Help](!token-mod --help)\n[Bump](!bump --help)\n[GroupCheck](!group-check-config) • [Show](!group-check-config --show)\n[Concentration](!concentration)\n[DeathTracker](!dead config)\n[Drunk](!drunk --config) • [Help](!drunk --help)\n[Inspiration](!inspiration)\n[LazyXP](!xp config) • [Help](!xp help) • [Menu](!xp menu)\n[TokenNameNumber](!tnn --help)}}{{**Script Config**\n[5eHelp](!5ehelp) • [5eStatus](!5estatus)\n[AreasOfEffect](!areasOfEffectShowMenu)\n[CombatTracker](!ct config)\n[Hexploration](!hexploration_showMenuMain)\n[LazyLoot](!loot config)\n[Resizer](!resizer config) • [Help](!resizer help) • [Menu](!resizer menu)\n[Roll20AudioManager](!roll20AM --config)\n}}",
+            "order": -1
+        },
+        {
+            "name": "Light",
+            "description": "",
+            "istokenaction": false,
+            "action": "!token-mod --set ?{Vision|\nTorch, light_radius#40 light_dimradius#20 light_hassight#yes light_angle#360 light_otherplayers#yes|\nHooded Lantern, light_radius#60 light_dimradius#30 light_hassight#yes light_angle#360 light_otherplayers#yes|\nBullseye Lantern, light_radius#120 light_dimradius#60 light_angle#60 light_hassight#yes light_otherplayers#yes|\nLamp, light_radius#30 light_dimradius#15 light_hassight#yes light_angle#360 light_otherplayers#yes|\nCandle, light_radius#5 light_dimradius#=0 light_hassight#yes light_angle#360 light_otherplayers#yes|\nDarkvision, light_radius#60 light_dimradius#=-5 light_hassight#yes light_angle#360 light_otherplayers#no|\nDarkvision (90'), light_radius#90 light_dimradius#=-5 light_hassight#yes light_angle#360 light_otherplayers#no|\nWarlock Devil's Sight, light_radius#120 light_dimradius#=120 light_hassight#yes light_angle#360 light_otherplayers#no|\nNo light source(Dusk), light_radius#120 light_dimradius#=-5 light_hassight#yes light_angle#360 light_otherplayers#no|\nFog, light_radius#200 light_dimradius#=5 light_hassight#yes light_angle#360 light_otherplayers#no|\nNo light source, light_radius#5 light_dimradius#=-5 light_hassight#yes light_angle#360 light_otherplayers#no|\nBlinded, light_hassight#no light_angle#360 light_otherplayers#no}",
+            "order": -1
+        },
+        {
+            "name": "MarchingOrder",
+            "description": "",
+            "istokenaction": false,
+            "action": "!showMarchingOrderMenu",
+            "order": -1
+        },
+        {
+            "name": "CarryTokens",
+            "description": "",
+            "istokenaction": false,
+            "action": "!CARRY_TOKENS_MENU",
+            "order": -1
+        },
+        {
+            "name": "TokenMenu",
+            "description": "",
+            "istokenaction": false,
+            "action": "/w gm &{template:default} {{name=Token Menu}} {{[Light](~GMMacroSheet|Light)\n[MarchingOrder](~GMMacroSheet|MarchingOrder)\n[CarryTokens](~GMMacroSheet|CarryTokens)\n[Inspiration](~GMMacroSheet|Inspiration)}}",
+            "order": -1
+        },
+        {
+            "name": "Flight",
+            "description": "",
+            "istokenaction": false,
+            "action": "!fly ?{How many feet?|0}",
+            "order": -1
+        },
+        {
+            "name": "Inspiration",
+            "description": "",
+            "istokenaction": false,
+            "action": "!inspiration",
+            "order": -1
+        },
+        {
+            "name": "Combat",
+            "description": "",
+            "istokenaction": false,
+            "action": "!ct",
+            "order": -1
+        },
+        {
+            "name": "Flight",
+            "description": "",
+            "istokenaction": false,
+            "action": "!fly ?{How many feet?|0}",
+            "order": -1
+        },
+        {
+            "name": "GMSheet",
+            "description": "",
+            "istokenaction": false,
+            "action": "!gmsheet",
+            "order": -1
+        },
+        {
+            "name": "ChatMenu",
+            "description": "",
+            "istokenaction": false,
+            "action": "/w gm &{template:default} {{name=Utility Menu}} {{**Import Spells**\n[Spells](!shaped-spells) | [Remove All Spells](!shaped-remove-spell --all)\n[Expand Spells](!shaped-expand-spells)\n**Import Monsters**\n[Monster](!shaped-monsters) | [Replace and Overwrite Monster](!shaped-monsters --replace)\n[From Statblock](!shaped-import-statblock) | [From Token Name](!shaped-import-by-token)\n**Character Creation**\n[Character Builder](~Character-Builder)\n**Create Token Macro Buttons**\n[Attacks](!shaped-abilities --attacks) | [Actions](!shaped-abilities --actions) | [Reactions](!shaped-abilities --reactions)\n[Traits](!shaped-abilities --traits) | [Racial Traits](!shaped-abilities --racialTraits)\n[Class Features](!shaped-abilities --classFeatures) | [Feats](!shaped-abilities --feats)\n[Legendary Actions](!shaped-abilities --legendaryA) | [Lair Actions](!shaped-abilities --lairA)\n**Setup**\n[Set Token to Defaults](!shaped-apply-defaults)\n[Set Default Token](!token-mod --set defaulttoken) \n[Update to Current Sheet](!shaped-update-character)\n[Update All-Caution](!shaped-update-character --all)\n**Rests and Resets**\n[Short Rest](!shaped-rest --short) | [Long Rest](!shaped-rest --long) \n**Utility**\n[Health Aura On](!setattr --sel --USECOLOR|YES\n!aura update) | [Health Aura Off](!setattr --sel --USECOLOR|NO\n!aura update)\n[Door Commands](!&#13;#{Macros|Doors})\n[Ready Roofs](!RoofReady)\n[Summon Duplicates](~Summon)\n}}",
+            "order": -1
+        },
+        {
+            "name": "Exhaustion",
+            "description": "",
+            "istokenaction": false,
+            "action": "!setattr --modb --silent --sel --exhaustion_level|?{Add or Subtract?|Add,+1|Subtract,-1}\n/desc Exhaustion ?{Add or Subtract?|Add,gain|Subtract,lose}",
+            "order": -1
+        }
+    ]
+}

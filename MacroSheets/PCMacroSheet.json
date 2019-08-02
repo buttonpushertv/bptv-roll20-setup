@@ -1,0 +1,185 @@
+{
+    "schema_version": 2,
+    "oldId": "-LkGN5sPSHohnEy7OQBK",
+    "name": "PCMacroSheet",
+    "avatar": "",
+    "bio": "",
+    "gmnotes": "",
+    "defaulttoken": "",
+    "tags": "[]",
+    "controlledby": "all",
+    "inplayerjournals": "all",
+    "attribs": [
+        {
+            "name": "l1mancer_status",
+            "current": " ",
+            "max": "",
+            "id": "-LkGN5t5r1APUoVGxRI1"
+        },
+        {
+            "name": "rtype",
+            "current": "@{advantagetoggle}",
+            "max": "",
+            "id": "-LkGN5t8tjg7vN6YIBWD"
+        },
+        {
+            "name": "cd_bar1_v",
+            "current": "",
+            "max": "",
+            "id": "-LkGN5tBIUnHMAGWPEBG"
+        },
+        {
+            "name": "cd_bar1_m",
+            "current": "",
+            "max": "",
+            "id": "-LkGN5tBIUnHMAGWPEBH"
+        },
+        {
+            "name": "cd_bar1_l",
+            "current": "npc_ac",
+            "max": "",
+            "id": "-LkGN5tBIUnHMAGWPEBI"
+        },
+        {
+            "name": "cd_bar2_l",
+            "current": "",
+            "max": "",
+            "id": "-LkGN5tCTCwIs_KP--zR"
+        },
+        {
+            "name": "cd_bar3_v",
+            "current": "hp_max",
+            "max": "",
+            "id": "-LkGN5tCTCwIs_KP--zS"
+        },
+        {
+            "name": "cd_bar3_m",
+            "current": "hp_max",
+            "max": "",
+            "id": "-LkGN5tD2KBhSbYyaKZj"
+        },
+        {
+            "name": "dndstyling",
+            "current": "on",
+            "max": "",
+            "id": "-LkGN5tEvoT5CJDJ6it9"
+        },
+        {
+            "name": "version",
+            "current": "2.7",
+            "max": "",
+            "id": "-LkGNCKh298t0pZD988J"
+        },
+        {
+            "name": "global_skill_mod",
+            "current": "",
+            "max": "",
+            "id": "-LkGNCPDjgSPGR3GbkVU"
+        },
+        {
+            "name": "global_save_mod",
+            "current": "",
+            "max": "",
+            "id": "-LkGNCPHJkKtYNVSt8Yh"
+        },
+        {
+            "name": "global_attack_mod",
+            "current": "",
+            "max": "",
+            "id": "-LkGNCPYEfE47yV5zYBW"
+        },
+        {
+            "name": "global_damage_mod_roll",
+            "current": "",
+            "max": "",
+            "id": "-LkGNCPsJgDLXplyR9QA"
+        },
+        {
+            "name": "global_damage_mod_crit",
+            "current": "",
+            "max": "",
+            "id": "-LkGNCPtO5O5gLxN-XVj"
+        },
+        {
+            "name": "global_damage_mod_type",
+            "current": "",
+            "max": "",
+            "id": "-LkGNCPv3rJc3SdEw3md"
+        },
+        {
+            "name": "armorwarningflag",
+            "current": "hide",
+            "max": "",
+            "id": "-LkGNCRtJMrG6dRVHWUb"
+        },
+        {
+            "name": "customacwarningflag",
+            "current": "hide",
+            "max": "",
+            "id": "-LkGNCRwQaY7hRtC-2zm"
+        },
+        {
+            "name": "ac",
+            "current": 10,
+            "max": "",
+            "id": "-LkGNCRyT3MjHT23YYD7"
+        },
+        {
+            "name": "mancer_confirm_flag",
+            "current": 1,
+            "max": "",
+            "id": "-LkGNCTcb-KOAqMip3-A"
+        }
+    ],
+    "abilities": [
+        {
+            "name": "AreasOfEffectMenu",
+            "description": "",
+            "istokenaction": false,
+            "action": "!areasOfEffectShowMenu",
+            "order": -1
+        },
+        {
+            "name": "AoeShorutct_Blast",
+            "description": "",
+            "istokenaction": false,
+            "action": "!areasOfEffectApplyEffectAtBlast @{selected|token_id} ?{Specify radius:} ?{Which effect?|BurningHands}",
+            "order": -1
+        },
+        {
+            "name": "AoeShourtct_Burst",
+            "description": "",
+            "istokenaction": false,
+            "action": "!areasOfEffectApplyEffectAtToken @{target|token_id} ?{Specify radius:} ?{Which effect?|BurningHands}",
+            "order": -1
+        },
+        {
+            "name": "AoeShortcut_Cone",
+            "description": "",
+            "istokenaction": false,
+            "action": "!areasOfEffectApplyEffectAtCone @{selected|token_id} ?{Specify radius:} ?{Which effect?|BurningHands}",
+            "order": -1
+        },
+        {
+            "name": "AoeShortcut_Tokens",
+            "description": "",
+            "istokenaction": false,
+            "action": "!areasOfEffectApplyEffectBetweenTokens @{selected|token_id} @{target|token_id} ?{Which effect?|BurningHands}",
+            "order": -1
+        },
+        {
+            "name": "DealDamage",
+            "description": "",
+            "istokenaction": false,
+            "action": "!token-mod --set bar3_value|-[[(?{Damage})/?{Resistance?|No,1|Yes,2}*?{Vulnerability?|No,1|Yes,2}]]  --ids @{target|Target 1|token_id}\n/em did ?{Damage} damage to @{target|Target 1|token_name}.",
+            "order": -1
+        },
+        {
+            "name": "Healing",
+            "description": "",
+            "istokenaction": false,
+            "action": "!token-mod --set bar3_value|+[[?{Type|Common,2d4+2|Greater,4d4+4|Superior,8d4+4|Supreme,10d4+20|Other,?{Custom Heal&#125;}]]  --ids @{target|Target 1|token_id}\n/em healed @{target|Target 1|token_name} for ?{Type} HP.",
+            "order": -1
+        }
+    ]
+}

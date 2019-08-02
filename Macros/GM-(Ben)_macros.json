@@ -1,0 +1,21 @@
+{
+    "schema_version": 2,
+    "macros": [
+        {
+            "attributes": {
+                "action": "@{selected|wtype}%{selected|initiative}",
+                "istokenaction": true,
+                "name": "1_Initiative",
+                "visibleto": "all"
+            }
+        },
+        {
+            "attributes": {
+                "action": "!token-mod --set statusmarkers|?{Status|\nClear All, --set statusmarkers#-red#-blue#-green#-brown#-purple#-pink#-yellow#-dead#-skull#-sleepy#-half-heart#-half-haze#-interdiction#-snail#-lightning-helix#-spanner#-chained-heart#-chemical-bolt#-death-zone#-drink-me#-edge-crack#-ninja-mask#-stopwatch#-fishing-net#-overdrive#-strong#-fist#-padlock#-three-leaves#-fluffy-wing#-pummeled#-tread#-arrowed#-aura#-back-pain#-black-flag#-bleeding-eye#-bolt-shield#-broken-heart#-cobweb#-broken-shield#-flying-flag#-radioactive#-trophy#-broken-skull#-frozen-orb#-rolling-bomb#-white-tower#-grab#-screaming#-grenade#-sentry-gun#-all-for-one#-angel-outfit#-archery-target --set tint_color|transparent|\n―, |\nDying,!skull --set tint_color|C40000|\nDead,!dead --set tint_color|ffffff|\n―, |\nConcentrating,!blue|\nReadying,!stopwatch|\n―, |\nProne,!back-pain|\nRestrained,!fishing-net|\nGrappled,!grab|\n―, |\nIncapacitated,!interdiction|\nStunned,!pummeled|\nUnconscious,!sleepy|\n―, |\nCharmed,!chained-heart|\nFrightened,!screaming|\n―, |\nPoisoned,!chemical-bolt|\nBlinded,!bleeding-eye|\nDeafened,!edge-crack|\nParalyzed,!padlock|\nPetrified,!broken-skull|\n―, |\nDodging,!bolt-shield|\nCover (half),!broken-shield:2|\nCover (three-quarters),!broken-shield:5|\nCover (full),!white-tower|\nInvisible,!ninja-mask|\n―, |\nBlessed,!angel-outfit|\nBardic Inspiration,!half-heart|\nRaging,!overdrive|\nMarked,!archery-target|\nHeroism,!strong|\nLight,!yellow|\nMage Armor,!aura|\nSlowed,!snail|\nHasted,!tread|\nTides of Chaos,!rolling-bomb|\nVow of Enmity,!fist|\n―, |\nC O L O R S, |\nRed,!red|\nBrown,!brown|\nGreen,!green|\nOrange,!orange|\nPurple,!purple|\nPink,!pink|\nU N A S S I G N E D, |\nSkull,!skull|\nHalf Haze,!half-haze|\nSpanner,!spanner|\nDeath Zone,!death-zone|\nDrink Me,!drink-me|\nThree Leaves,!three-leaves|\nFluffy Wing,!fluffy-wing|\nArrowed,!arrowed|\nBlack Flag,!black-flag|\nBroken Heart,!broken-heart|\nCobweb,!cobweb|\nFlying Flag,!flying-flag|\nRadioactive,!radioactive|\nTrophy,!trophy|\nFrozen Orb,!frozen-orb|\nGrenade,!grenade|\nSentry Gun,!sentry-gun|\nAll For One,!all-for-one|\n}",
+                "istokenaction": true,
+                "name": "2_Conditions",
+                "visibleto": ""
+            }
+        }
+    ]
+}
